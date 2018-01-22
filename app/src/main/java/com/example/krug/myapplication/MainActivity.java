@@ -35,7 +35,7 @@ import android.widget.TextView;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-/*limit*/
+import static android.Manifest.permission.INTERNET;
 
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -193,7 +193,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
 
             if(position == 1){
-                Log.d("Position", "2");
+                ItemFragment liste = new ItemFragment();
+                return liste;
             }
 
 
@@ -221,10 +222,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng Panoramas = new LatLng(48.870675, 2.342327);
+        mMap.addMarker(new MarkerOptions().position(Panoramas).title("Panoramas"));
+
+        LatLng Palais = new LatLng(48.868859, 2.341246);
+        mMap.addMarker(new MarkerOptions().position(Palais).title("Palais"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Palais));
         //mMap.setMyLocationEnabled(true);
     }
 
