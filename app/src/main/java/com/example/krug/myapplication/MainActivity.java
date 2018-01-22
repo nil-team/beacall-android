@@ -185,8 +185,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-
             if(position == 0){
+                Log.d("Position", "1");
+                FirstFragment Login_Fragment = new FirstFragment();
+
+                return Login_Fragment;
+            }
+
+            if(position == 1){
+                Log.d("Position", "2");
+            }
+
+
+            if(position == 2){
                 SupportMapFragment mapFragment = new SupportMapFragment();
                 mapFragment.getMapAsync(MainActivity.this);
                 return mapFragment;
